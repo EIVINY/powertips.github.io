@@ -1,96 +1,83 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+<p align="center">
+    <a href="https://www.halo.run" target="_blank" rel="noopener noreferrer">
+        <img width="100" src="https://www.halo.run/logo" alt="Halo logo" />
+    </a>
+</p>
 
-![Academic Pages template example](images/homepage.png "Academic Pages template example")
+<p align="center"><b>Halo</b> [ˈheɪloʊ]，强大易用的开源建站工具。</p>
+<p align="center">
+<a href="https://github.com/halo-dev/halo/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/halo-dev/halo.svg?style=flat-square&include_prereleases" /></a>
+<a href="https://hub.docker.com/r/halohub/halo"><img alt="Docker pulls" src="https://img.shields.io/docker/pulls/halohub/halo?style=flat-square" /></a>
+<a href="https://github.com/halo-dev/halo/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/halo-dev/halo.svg?style=flat-square" /></a>
+<a href="https://github.com/halo-dev/halo/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/halo-dev/halo/halo.yaml?branch=main&style=flat-square" /></a>
+<a href="https://codecov.io/gh/halo-dev/halo"><img alt="Codecov percentage" src="https://img.shields.io/codecov/c/github/halo-dev/halo/main?style=flat-square&token=YsRUg9fall"/></a>
+<a href="https://gitcode.com/feizhiyun/Halo"><img src="https://gitcode.com/feizhiyun/Halo/star/badge.svg" alt="GitCode Stars"></a>
+<a href="https://www.producthunt.com/posts/halo-6b401e75-bb58-4dff-9fe9-2ada3323c874?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-halo&#0045;6b401e75&#0045;bb58&#0045;4dff&#0045;9fe9&#0045;2ada3323c874" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=407442&theme=light" alt="Halo - Powerful&#0032;and&#0032;easy&#0045;to&#0045;use&#0032;Open&#0045;Source&#0032;website&#0032;building&#0032;tool | Product Hunt" style="height: 20px;" height="20px" /></a>
+<br />
+<a href="https://www.halo.run">官网</a>
+<a href="https://docs.halo.run">文档</a>
+<a href="https://bbs.halo.run">社区</a>
+<a href="https://gitee.com/halo-dev">Gitee</a>
+<a href="https://t.me/halo_dev">Telegram 频道</a>
+</p>
 
-# Getting Started
+[![Watch the video](https://www.halo.run/upload/halo-github-screenshot.png)](https://www.bilibili.com/video/BV15x4y1U7RU/?share_source=copy_web&vd_source=0ab6cf86ca512a363f04f18b86f55b86)
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+------------------------------
 
-See more info at https://academicpages.github.io/
+## 快速开始
 
-## Running locally
-
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try run `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
+如果你的设备有 Docker 环境，可以使用以下命令快速启动一个 Halo 的体验环境：
 
 ```bash
-chmod -R 777 .
-docker compose up
+docker run -d --name halo -p 8090:8090 -v ~/.halo2:/root/.halo2 halohub/halo:2.21
 ```
 
-You should now be able to access the website from `localhost:4000`.
+或者点击下方按钮使用 [Gitpod](https://gitpod.io/) 或 [ClawCloud Run](https://template.us-west-1.run.claw.cloud/deploy?templateName=halo) 启动一个体验环境：
 
-### Using the DevContainer in VS Code
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/halo-sigs/gitpod-demo)
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development coontainer configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+[![Run on ClawCloud](https://raw.githubusercontent.com/ClawCloud/Run-Template/refs/heads/main/Run-on-ClawCloud.svg)](https://template.us-west-1.run.claw.cloud/deploy?templateName=halo)
 
-# Maintenance
+**以上方式仅作为体验使用，推荐使用开源 Linux 服务器运维管理面板 [1Panel](https://github.com/1Panel-dev/1Panel) 进行部署（[查看文档](https://docs.halo.run/getting-started/install/1panel)），轻松搞定反向代理、SSL 证书及升级备份任务。更多部署方式，请[查看文档](https://docs.halo.run/category/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)。**
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+## 在线体验
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+- 环境地址：<https://demo.halo.run>
+- 后台地址：<https://demo.halo.run/console>
+- 用户名：`demo`
+- 密码：`P@ssw0rd123..`
 
-## Bugfixes and enhancements
+## 专业版
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+相比于社区版，Halo 专业版为用户提供了大量增强功能及技术支持服务，增强功能包括短信验证码注册登录、全站私有化、LDAP 登录、三方账号登录及自定义 LOGO 等。 [点击查看专业版详细介绍](https://www.lxware.cn/halo)。
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+## 生态
 
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+可访问 [官方应用市场](https://www.halo.run/store/apps) 或 [awesome-halo 仓库](https://github.com/halo-sigs/awesome-halo) 查看适用于 Halo 2.x 的主题和插件。
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+## 许可证
+
+[![license](https://img.shields.io/github/license/halo-dev/halo.svg?style=flat-square)](https://github.com/halo-dev/halo/blob/master/LICENSE)
+
+Halo 使用 GPL-v3.0 协议开源，请遵守开源协议。
+
+## 赞助
+
+如果 Halo 对你有帮助，欢迎[赞助我们](https://afdian.com/a/halo-dev)，感谢以下赞助者对 Halo 项目的支持：
+
+<p align="center">
+  <a target="_blank" href="https://afdian.com/a/halo-dev">
+    <img alt="sponsors" src="https://github.com/halo-sigs/sponsor-images/blob/main/sponsorkit/sponsors.svg?raw=true">
+  </a>
+</p>
+
+## 贡献
+
+参考 [CONTRIBUTING](https://github.com/halo-dev/halo/blob/main/CONTRIBUTING.md)。
+
+<a href="https://github.com/halo-dev/halo/graphs/contributors"><img src="https://opencollective.com/halo/contributors.svg?width=890&button=false" /></a>
+
+## 状态
+
+![Repobeats analytics](https://repobeats.axiom.co/api/embed/ad008b2151c22e7cf734d2688befaa795d593b95.svg "Repobeats analytics image")

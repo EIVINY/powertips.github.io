@@ -1,8 +1,68 @@
-Contributions are welcome! 
+> 欢迎你参与 Halo 的开发，下面是参与代码贡献的指南，以供参考。
 
-Please add issues and make pull requests. There are no stupid questions. All ideas are welcome. This is a volunteer project. Be excellent to each other.
+### 代码贡献步骤
 
-Bug reports and feature requests to the template  should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+#### 0. 提交 issue
 
-Fork from master and go from there. Remember that this repository is intended to remain a generic, ready-to-fork template that demonstrates the features of academicpages.
+任何新功能或者功能改进建议都先提交 issue 讨论一下再进行开发，bug 修复可以直接提交 pull request。
+
+#### 1. Fork 此仓库
+
+点击右上角的 `fork` 按钮即可。
+
+#### 2. Clone 仓库到本地
+
+```bash
+git clone https://github.com/{YOUR_USERNAME}/halo
+
+git submodule init
+
+git submodule update
+```
+
+#### 3. 创建新的开发分支
+
+```bash
+git checkout -b {BRANCH_NAME}
+```
+
+#### 4. 提交代码
+
+```bash
+git push origin {BRANCH_NAME}
+```
+
+#### 5. 提交 pull request
+
+回到自己的仓库页面，选择 `New pull request` 按钮，创建 `Pull request` 到原仓库的 `main` 分支。
+
+然后等待我们 Review 即可，如有 `Change Request`，再本地修改之后再次提交即可。
+
+#### 6. 更新主仓库代码到自己的仓库
+
+```bash
+git remote add upstream git@github.com:halo-dev/halo.git
+
+git pull upstream main
+
+git push
+```
+
+### E2E
+
+Please consider adding some [e2e test cases](e2e/README.md) to make sure the APIs work as expected.
+
+### 开发规范
+
+请参考 [https://docs.halo.run/developer-guide/core/code-style](https://docs.halo.run/developer-guide/core/code-style)，请确保所有代码格式化之后再提交。
+
+### Usage of Cherry Pick Script
+
+We can use the cherry pick script to cherry-pick commits in pull request as follows:
+
+```bash
+GITHUB_USER={your_github_user} hack/cherry_pick_pull.sh upstream/{target_branch} {pull_request_number}
+```
+
+> This script is from <https://github.com/kubernetes/kubernetes/blob/master/hack/cherry_pick_pull.sh>.
 
